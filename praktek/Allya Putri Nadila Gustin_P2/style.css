@@ -1,0 +1,40 @@
+.judul-saya{
+    color:red;
+    text-align: center;
+
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    background-color: antiquewhite;
+}
+#gambar-saya {
+    width: 150px;
+    height: 180px;
+    border-radius: 100px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.list-skill, .list-social-media {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.subtittle {
+    text-align: center;
+}
+
+.tombol-cv{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

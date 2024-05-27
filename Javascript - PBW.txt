@@ -1,0 +1,7 @@
+Javascript - PBW
+
+console.log("Allya Putri Nadila Gustin")
+
+console.log(10 * 10)
+
+console.error("Terjadi kesalahan saat mengambil data!")

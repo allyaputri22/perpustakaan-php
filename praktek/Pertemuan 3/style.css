@@ -1,0 +1,24 @@
+
+.div-pertama {
+    background-color: lightcoral;
+}
+
+.div-kedua {
+    background-color: lightblue;
+}
+
+.div-ketiga {
+    background-color: greenyellow;
+    display: flex;
+    /*
+    center = tengah, space-between, space-around, */
+    justify-content: space-around;
+}
+
+.div-ketiga-1 {
+    background-color: pink;
+}
+
+.div-ketiga-2{
+    background-color: brown;
+}

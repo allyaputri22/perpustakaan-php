@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hangman Game</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #game {
+    margin: 50px auto;
+  }
+</style>
+</head>
+<body>
+
+<div id="game">
+  <h2>Hangman Game</h2>
+  <p>Guess the word by entering one letter at a time.</p>
+  <p>Number of guesses remaining: <span id="guessesLeft">6</span></p>
+  <p id="wordDisplay"></p>
+  <p id="guessedLetters"></p>
+  <input type="text" id="guessInput" maxlength="1" oninput="checkInput()">
+  <p id="message"></p>
+</div>
+
+<script>
+  const words = ['javascript', 'html', 'css', 'python', 'ruby', 'java', 'php', 'swift'];
+  let word = words[Math.floor(Math.random() * words.length)];
+  let remainingGuesses = 6;
+  let guessedLetters = new Set();
+  let wordInProgress = '_'.repeat(word.length);
+
+  function displayWord() {
+    document.getElementById('wordDisplay').textContent = wordInProgress.split('').join(' ');
+  }
+
+  function displayGuessedLetters() {
+    document.getElementById('guessedLetters').textContent = Array.from(guessedLetters).join(', ');
+  }
+
+  function checkInput() {
+    const guess = document.getElementById('guessInput').value.toLowerCase();
+    if (/^[a-z]$/.test(guess) && !guessedLetters.has(guess)) {
+      guessedLetters.add(guess);
+      if (!word.includes(guess)) {
+        remainingGuesses--;
+      } else {
+        for (let i = 0; i < word.length; i++) {
+          if (word[i] === guess) {
+            wordInProgress = wordInProgress.substring(0, i) + guess + wordInProgress.substring(i + 1);
+          }
+        }
+      }
+      displayWord();
+      displayGuessedLetters();
+      updateMessage();
+    }
+    document.getElementById('guessInput').value = '';
+  }
+
+  function updateMessage() {
+    if (wordInProgress === word) {
+      setMessage('Congratulations! You guessed the word correctly.');
+    } else if (remainingGuesses === 0) {
+      setMessage(`Game over! The word was "${word}".`);
+    } else {
+      setMessage(`Number of guesses remaining: ${remainingGuesses}`);
+    }
+  }
+
+  function setMessage(msg) {
+    document.getElementById('message').textContent = msg;
+  }
+
+  displayWord();
+</script>
+
+</body>
+</html>

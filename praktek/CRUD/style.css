@@ -1,0 +1,16 @@
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form {
+    padding: 50px;
+    background-color: rgb(111, 154, 219); 
+    width: 500px;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 400px;  
+}

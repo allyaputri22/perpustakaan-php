@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.container-1 {
+    width: 60%;
+    display: flex;
+}
+
+.my-image {
+    width: 250px;
+    border-radius: 20px;
+}
+
+.container-2 {
+    padding-left: 15px;
+    text-align: justify;
+}
+
+
+

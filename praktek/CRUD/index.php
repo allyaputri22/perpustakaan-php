@@ -26,7 +26,7 @@ if(!isset($_SESSION['email'])){
                         </tr>
                     </table>
 
-                    <form align= "center"  action="logout.php" method="POST">
+                    <form align= "center" action="logout.php" method="POST">
                         <button  type="submit">LOGOUT</button>
                     </form>
 </body>

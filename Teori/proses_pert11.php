@@ -1,26 +1,28 @@
 <?php
 
-
 include "koneksi.php";
 
-//mengambil data inputan
-    $npm_mhs = $_POST['npm'];
-    $nilai_mhs = $_POST['nilai'];
-  
-    $proses = mysqli_query($koneksi,"INSERT INTO mahasiswa (nama,prodi) VALUES ('$npm_mhs','$nilai_mhs') ")
-    or die (mysqli_error($koneksi));
+$nama = $_POST['nama'];
+$prodi = $_POST['prodi'];
 
-    if($proses){
-        echo "<script>
-             alert('Data Berhasil Disimpan')
-             window.location.href = 'pert11.php'
+$proses_insert_data = mysqli_query($koneksi, "INSERT INTO mahasiswa (nama, prodi) VALUES ('$nama', '$prodi')")
+    or die(mysqli_error($koneksi));
+
+if ($proses_insert_data) {
+    echo "
+        <script>
+            alert('Data Berhasil Disimpan');
+            window.location.href='pert11.php';
         </script>";
-    }else{
-        "<script>
-        alert('Data Gagal Disimpan')
-        window.location.href = 'pert11.php'
-   </script>";
-    }
+} else {
+    echo "
+        <script>
+            alert('Data Gagal Disimpan');
+            window.location.href='pert11.php';
+        </script>";
+}
+
+
     
     if($nilai_mhs != ""){
 
